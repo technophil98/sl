@@ -87,6 +87,11 @@ int main(int argc, char *argv[])
     leaveok(stdscr, TRUE);
     scrollok(stdscr, FALSE);
 
+    start_color();            /* Start color 			*/
+    init_pair(1, COLOR_MAGENTA, COLOR_BLACK);
+
+    attron(COLOR_PAIR(1));
+
     for (x = COLS - 1; ; --x) {
         if (add_uni(x) == ERR) break;
 
